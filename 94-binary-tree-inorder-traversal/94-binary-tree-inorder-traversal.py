@@ -12,13 +12,13 @@ class Solution(object):
         """
         stack = []
         result = []
-        
-        while root or stack:
-            while root:
-                stack.append(root)
-                root = root.left
+        rootToProcess = root
+        while rootToProcess or stack:
+            while rootToProcess:
+                stack.append(rootToProcess)
+                rootToProcess = rootToProcess.left
             curr = stack.pop()
             result.append(curr.val)
-            root = curr.right
+            rootToProcess = curr.right
         
         return result
