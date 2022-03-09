@@ -3,7 +3,7 @@ class Solution:
     def minimalKSum(self, nums: List[int], k: int) -> int:
         
         result = (k*(k+1))//2
-        nums = sorted(list(set(nums)))
+        nums = sorted(set(nums))
         for num in nums:
             if num<=k:
                 result -= num
